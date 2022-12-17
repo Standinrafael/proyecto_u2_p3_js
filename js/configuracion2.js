@@ -19,11 +19,34 @@ const app = Vue.createApp({
 
     data() {
         return {
-            arreglo: frases
+            arreglo: frases,
+            fraseNueva:null
+        }
+
+    },
+    methods:{
+        agregarFrase({charCode}){
+            console.log("Mensaje desestructurado")
+            console.log(charCode)
+            const fraseObjetoNueva={
+            texto:this.fraseNueva,
+            autor:'Jorge'
+           }
+            this.arreglo.unshift(fraseObjetoNueva)
+        },
+        agregarFraseModificador(event){
+            console.log("Mensaje")
+            console.log(event.charCode)
+            if(event.charCode!==13) return
+
+            const fraseObjetoNueva={
+            texto:this.fraseNueva,
+           
+           }
+            this.arreglo.unshift(fraseObjetoNueva)
         }
 
     }
-
 })
 
 app.mount('#myApp2')
