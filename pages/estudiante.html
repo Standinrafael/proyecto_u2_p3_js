@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/estudiante.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <header></header>
+    <nav></nav>
+    <section>
+        <div id="myApp3">
+            <h1> ESTUDIANTES</h1>
+            <label for=""> Nombre: {{nombreNuevo}}</label>
+            <input type="text" v-model="nombreNuevo">
+            <label for=""> Apellido: {{apellidoNuevo}}</label>
+            <input type="text" v-model="apellidoNuevo">
+            <label for=""> Direccion: {{direccionNueva}}</label>
+            <input type="text" v-model="direccionNueva">
+            <button  v-on:click="agregarEstudiante"> Ingresar Estudiante</button>
+            <h2> Lista de Estudiantes</h2>
+            <ul>
+                <li v-for="{nombre,apellido,direccion} in arreglo">
+                    <blockquote > Estudiante: {{nombre}}</blockquote>
+                    <blockquote v-show="apellido !== undefined">  Apellido: {{apellido}}</blockquote>
+                    <blockquote v-show="direccion !== undefined">  Direccion: {{direccion}}</blockquote>
+                    <hr>
+                </li>
+            </ul>
+
+
+        </div>
+    </section>
+    <footer></footer>
+    <script src="../js/configuracion_estudiante.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    
+</body>
+</html>
